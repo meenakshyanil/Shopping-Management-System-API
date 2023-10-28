@@ -39,7 +39,7 @@ namespace ShoppingApi.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.Id }, user);
+            return Created("auth", user);
         }
 
         [HttpPost("login")]
